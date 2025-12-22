@@ -7,7 +7,7 @@ import streamlit as st
 import altair as alt
 
 
-# --- Core Powerball logic ------------------------------------------------- #
+# Core Powerball logic
 
 WHITE_BALLS = list(range(1, 70))   # 1–69
 POWER_BALLS = list(range(1, 27))   # 1–26
@@ -120,7 +120,7 @@ def generate_high_prob_tickets(
     return tickets
 
 
-# --- Streamlit App -------------------------------------------------------- #
+# Streamlit App
 
 def main():
     st.set_page_config(
@@ -193,7 +193,7 @@ def main():
 
         st.success(f"Simulation completed with {n_draws:,} drawings.")
 
-        # --- Distributions ------------------------------------------------- #
+        # Distributions
         col1, col2 = st.columns(2, gap="large")
 
         # White balls distribution
@@ -238,7 +238,7 @@ def main():
             )
             st.altair_chart(chart_power, use_container_width=True)
 
-        # --- Ticket generation -------------------------------------------- #
+        # Ticket generation
         st.markdown("---")
 
         if mode.startswith("Mode A"):
